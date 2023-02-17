@@ -60,15 +60,15 @@ router.push({
 
 const getSearchResults = () => {
 clearTimeout(queryTimeout.value);
-queryTimeout.value = 
+const API_PATH = 'https://openweathermap.org/data/2.5/find?q=';
+const TOKEN = '439d4b804bc8187953eb36d2a8c26a02';
 
 setTimeout(async () => {
     if (searchQuery.value !== "") {
     try {
         const result = 
-        
         await axios.get(
-        `https://openweathermap.org/data/2.5/find?q=${searchQuery.value}&type=like&sort=population&cnt=30&appid=439d4b804bc8187953eb36d2a8c26a02&_=1676562472726`
+        `${API_PATH}${searchQuery.value}&type=like&sort=population&cnt=30&appid=${TOKEN}&_=1676562472726`
         );
         searchError.value = false;
         cityListResults.value = result.data.list;
@@ -79,8 +79,6 @@ setTimeout(async () => {
     }
     cityListResults.value = null;
 }, 300);
-
-
 };
 </script>
   

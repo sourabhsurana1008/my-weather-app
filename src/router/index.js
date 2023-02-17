@@ -14,7 +14,7 @@ const router = createRouter({
       path: "/search/:city",
       name: "searchView",
       component: SearchView,
-    },
+    }
   ],
 });
 
