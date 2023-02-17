@@ -25,7 +25,6 @@
             hour: "numeric",
           })
         }}</span>
-        <span class="text-xs font-semibold text-gray-400">AM</span>
       </div>
     </div>
 </div>
