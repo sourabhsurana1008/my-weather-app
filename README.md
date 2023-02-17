@@ -39,3 +39,6 @@ npm run lint
 * docker build -t application:v1 . 
 * docker run -d -p 80:80 application:v1
 * access - http://localhost
+
+### Netlify Url
+https://stellar-dodol-5e672d.netlify.app/
