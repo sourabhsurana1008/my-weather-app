@@ -42,3 +42,6 @@ npm run lint
 
 ### Netlify Url
 https://stellar-dodol-5e672d.netlify.app/
+
+### Data validation 
+https://openweathermap.org/
