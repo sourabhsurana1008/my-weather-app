@@ -4,19 +4,24 @@
 			<ul class="flex justify-center space-x-2 text-white">
 				<li>
 					<button @click="currentTaab('Rio de Janeiro', -22.9028, -43.2075)"
-						class="text-slate-900 font-extrabold inline-block px-4 py-2 bg-white text-current focus:outline-none">
+						class="font-extrabold inline-block px-4 py-2 bg-white 
+						text-current focus:outline-none"
+						v-bind:class = "(selectedCity == 'Rio de Janeiro' ) ? 'text-sky-500 ': 'text-slate-900'"
+						>
 						Rio de Janeiro
 					</button>
 				</li>
 				<li>
 					<button @click="currentTaab('Beijing', '39.9075', '116.3972')"
-						class="text-slate-900 font-extrabold inline-block px-4 py-2 bg-white text-current focus:outline-none">
+						v-bind:class = "(selectedCity == 'Beijing' ) ? 'text-sky-500':'text-slate-900'"
+						class="font-extrabold inline-block px-4 py-2 bg-white text-current focus:outline-none">
 						Beijing
 					</button>
 				</li>
 				<li>
 					<button @click="currentTaab('Los Angeles', '34.0522', '-118.2437')"
-						class="text-slate-900 font-extrabold inline-block px-4 py-2 bg-white text-current focus:outline-none">
+						v-bind:class = "(selectedCity == 'Los Angeles' ) ? 'text-sky-500':'text-slate-900'"
+						class="font-extrabold inline-block px-4 py-2 bg-white text-current focus:outline-none">
 						Los Angeles
 					</button>
 				</li>
@@ -25,10 +30,10 @@
 	</div>
 
 	<div class="flex flex-col items-center justify-center 
-		  min-h-screen text-gray-700 p-10 bg-gradient-to-br from-pink-200 via-purple-200 to-indigo-200 ">
+			  min-h-screen text-gray-700 p-10 bg-gradient-to-br from-pink-200 via-purple-200 to-indigo-200 ">
 		<NextHourWidget :data=weatherDataHourly :city=selectedCity />
 		<NextFiveDayWidget :data=weatherDataDaily :city=selectedCity />
-	</div>
+</div>
 </template>
 
 <script setup>
@@ -41,18 +46,16 @@ const route = useRoute();
 const weatherDataHourly = ref(Object);
 const weatherDataDaily = ref(Object);
 const selectedCity = ref(String);
-const currentTaab = async(city, lat, long) =>{
+const currentTaab = async (city, lat, long) => {
 	const result = await getWeatherData(lat, long)
 	selectedCity.value = city;
 	weatherDataHourly.value = result.hourly.slice(0, 5);
-	weatherDataDaily.value =  result.daily.slice(0, 5);
+	weatherDataDaily.value = result.daily.slice(0, 5);
 };
 
-if(route.query.lat && route.query.lon && route.query.city) {
+if (route.query.lat && route.query.lon && route.query.city) {
 	currentTaab(route.query.city, route.query.lat, route.query.lon);
 } else {
 	currentTaab('Rio de Janeiro', -22.9028, -43.2075);
 }
 </script>
-
-
