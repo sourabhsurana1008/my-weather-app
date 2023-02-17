@@ -4,12 +4,12 @@
     <div class="flex justify-between items-center" v-for="weatherData in data" :key="weatherData.dt">
       <span class="font-semibold text-lg w-1/4">
         {{
-          new Date(weatherData.dt).toLocaleDateString(
+          new Date(weatherData.dt * 1000).toLocaleDateString(
             "en-us",
             {
               weekday: "short",
               day: "2-digit",
-              month: "long",
+              month: "short",
             }
           )
         }}
@@ -28,10 +28,16 @@
 </template>
 <script>
 
+
 export default {
   props: {
     data: Object,
     city: String
+  },
+  methods: {
+    setMyDateToToday() {
+        return new Date();
+    }
   }
 }
 </script>
