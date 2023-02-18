@@ -2,7 +2,7 @@
   <div>
     <SiteNavigation />
     <RouterView />
-  </div>
+</div>
 </template>
 
 <script setup>

@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     setMyDateToToday() {
-        return new Date();
+      return new Date();
     }
   }
 }
