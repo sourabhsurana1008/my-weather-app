@@ -1,8 +1,12 @@
 import axios from "axios";
 const getWeatherData = async (lat,long ) => {
 
-  const API_PATH = 'https://api.openweathermap.org/data/2.5/onecall?';
-  const TOKEN = '482944e26d320a80bd5e4f23b3de7d1f';
+  const API_PATH = import.meta.env.VITE_DETAIL_API_PATH;
+  const TOKEN = import.meta.env.VITE_DETAIL_API_TOKEN;
+
+ 
+
+
     try {
       const weatherData = await axios.get(
         `${API_PATH}lat=${lat}&lon=${long}&units=metric&appid=${TOKEN}`

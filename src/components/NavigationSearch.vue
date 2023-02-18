@@ -3,7 +3,7 @@
     <div class="relative">
       <input type="text" id="search" v-model="searchQuery" @input="getSearchResults" placeholder="Search for a city or state"
         class="py-2 px-1 w-full bg-transparent border-b focus:border-weather-secondary focus:outline-none focus:shadow-[0px_1px_0_0_#004E71]" />
-      <ul class="absolute bg-weather-secondary text-white w-full shadow-md py-2 px-1 top-[40px]" v-if="cityListResults">
+      <ul id="res" class="absolute bg-weather-secondary text-white w-full shadow-md py-2 px-1 top-[40px]" v-if="cityListResults">
         <p class="py-2" v-if="searchError">
           Sorry, something went wrong, please try full city name.
         </p>
@@ -44,8 +44,8 @@ const searchCity = (searchQuery) => {
 
 const getSearchResults = () => {
   clearTimeout(queryTimeout.value);
-  const API_PATH = 'https://openweathermap.org/data/2.5/find?q=';
-  const TOKEN = '439d4b804bc8187953eb36d2a8c26a02';
+  const API_PATH = import.meta.env.VITE_API_PATH;
+  const TOKEN =  import.meta.env.VITE_TOKEN;
 
   setTimeout(async () => {
     if (searchQuery.value !== "") {
