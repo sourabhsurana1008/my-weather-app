@@ -40,8 +40,11 @@ npm run lint
 * docker run -d -p 80:80 application:v1
 * access - http://localhost
 
-### Netlify Url
+### Online Url
 https://stellar-dodol-5e672d.netlify.app/
 
 ### Data validation 
 https://openweathermap.org/
+
+### Application View 
+![Application View](https://github.com/[sourabhsurana1008]/[my-weather-app]/blob/[main]/my-weather-app.png?raw=true)
