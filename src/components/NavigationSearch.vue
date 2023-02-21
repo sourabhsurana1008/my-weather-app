@@ -57,7 +57,7 @@ const getSearchResults = () => {
       try {
         const result =
           await axios.get(
-            `${API_PATH}${searchQuery.value}&type=like&sort=population&cnt=30&appid=${TOKEN}&_=1676562472726`
+            `${API_PATH}${searchQuery.value}&type=like&sort=population&cnt=30&appid=${TOKEN}`
           );
         searchError.value = false;
         cityListResults.value = result.data.list;
