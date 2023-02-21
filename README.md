@@ -40,7 +40,7 @@ npm run lint
 * docker run -d -p 80:80 application:v1
 * access - http://localhost
 
-### Online Url
+### Hosted Online Url
 https://stellar-dodol-5e672d.netlify.app/
 
 ### Data validation 
