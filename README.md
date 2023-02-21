@@ -47,4 +47,4 @@ https://stellar-dodol-5e672d.netlify.app/
 https://openweathermap.org/
 
 ### Application View 
-![Application View](https://github.com/[sourabhsurana1008]/[my-weather-app]/blob/[main]/my-weather-app.png)
+![Application View](https://github.com/sourabhsurana1008/my-weather-app/blob/main/my-weather-app.png)
